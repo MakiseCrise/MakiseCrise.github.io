@@ -10,7 +10,7 @@
     <link rel="stylesheet" href='https://makisecrise.github.io/css/light.css' />
     <link rel="stylesheet" href='https://makisecrise.github.io/css/dark.css' />
     <link rel="stylesheet" href='https://makisecrise.github.io/css/syntax.css' />
-    <title>网络端口扫描与防御 - MakieCrise</title>
+    <title>互联网基本工作原理与ip地址 - MakieCrise</title>
     
     <link rel="icon" type="image/x-icon" href='/images/github-mark.png'>
     
@@ -18,17 +18,17 @@
 
     
     <meta name="description"
-  content="常见的网络端口扫描" />
+  content="广域网与IP地址" />
 <meta name="keywords"
   content='blog, google analytics' />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://makisecrise.github.io/post/%E7%BD%91%E7%BB%9C%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E4%B8%8E%E9%98%B2%E5%BE%A1/" />
+<link rel="canonical" href="https://makisecrise.github.io/post/%E4%BA%92%E8%81%94%E7%BD%91%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8Eip%E5%9C%B0%E5%9D%80/" />
 
 
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="网络端口扫描与防御 - MakieCrise" />
+<meta name="twitter:title" content="互联网基本工作原理与ip地址 - MakieCrise" />
 <meta name="twitter:description"
-  content="常见的网络端口扫描" />
+  content="广域网与IP地址" />
 <meta name="twitter:site" content="https://makisecrise.github.io/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image"
@@ -36,17 +36,17 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:title" content="网络端口扫描与防御 - MakieCrise">
+<meta property="og:title" content="互联网基本工作原理与ip地址 - MakieCrise">
 <meta property="og:description"
-  content="常见的网络端口扫描" />
-<meta property="og:url" content="https://makisecrise.github.io/post/%E7%BD%91%E7%BB%9C%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E4%B8%8E%E9%98%B2%E5%BE%A1/" />
-<meta property="og:site_name" content="网络端口扫描与防御" />
+  content="广域网与IP地址" />
+<meta property="og:url" content="https://makisecrise.github.io/post/%E4%BA%92%E8%81%94%E7%BD%91%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8Eip%E5%9C%B0%E5%9D%80/" />
+<meta property="og:site_name" content="互联网基本工作原理与ip地址" />
 <meta property="og:image"
   content="https://makisecrise.github.io/">
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
-<meta property="article:published_time" content="2024-07-15 16:12:33 &#43;0800 CST" />
+<meta property="article:published_time" content="2024-07-18 20:25:37 &#43;0800 CST" />
 
 
 
@@ -135,19 +135,19 @@
                   </span>
                   <span class="path-divider">/</span>
                   <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
-                    <a href="https://makisecrise.github.io/post/%E7%BD%91%E7%BB%9C%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E4%B8%8E%E9%98%B2%E5%BE%A1/">网络端口扫描与防御</a>
+                    <a href="https://makisecrise.github.io/post/%E4%BA%92%E8%81%94%E7%BD%91%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8Eip%E5%9C%B0%E5%9D%80/">互联网基本工作原理与ip地址</a>
                   </strong>
                 </h1>
                 <div class="note m-0">
-                  Created <relative-time datetime="Mon, 15 Jul 2024 16:12:33 &#43;0800"
+                  Created <relative-time datetime="Thu, 18 Jul 2024 20:25:37 &#43;0800"
                     class="no-wrap">
-                    Mon, 15 Jul 2024 16:12:33 &#43;0800</relative-time>
+                    Thu, 18 Jul 2024 20:25:37 &#43;0800</relative-time>
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Thu, 18 Jul 2024 20:56:32 &#43;0800"
+                  Modified <relative-time datetime="Thu, 18 Jul 2024 21:59:19 &#43;0800"
                     class="no-wrap">
-                    Thu, 18 Jul 2024 20:56:32 &#43;0800</relative-time>
+                    Thu, 18 Jul 2024 21:59:19 &#43;0800</relative-time>
                   
                 </div>
               </div>
@@ -177,7 +177,7 @@
                         </div>
                       </div>
                     </details-menu>
-                      866 Words
+                      1220 Words
                     
 
                   </div>
@@ -189,60 +189,40 @@
 
 
               <div class="Box-body px-5 pb-5" style="z-index: 1">
-                <article class="markdown-body entry-content container-lg"><p>网络程序与外部的通讯需要由TCP或者IP传输层的端口承载，换言之，每个端口都是一条通信信道，开放的端口会为外来的攻击行为提供漏洞。</p>
-<hr>
-<p>以下是五种常见的端口扫描</p>
-<ol>
-<li>
-<p>TCP SYN扫描</p>
-<p>TCP指传输协议，SYN代表同步传输。TCP SYN传输的过程如下：
-主机发送向靶机某端口发送SYN包，靶机的回应有以下两种</p>
+                <article class="markdown-body entry-content container-lg"><h1 id="简单网络环境与ip的作用">简单网络环境与IP的作用</h1>
+<h2 id="互联环境">互联环境</h2>
+<p>假设一个简单场景，主机A与主机B之间需要进行数据通信，我们可以采用U盘的方式进行数据传输，也可以采用一根网线的方式链接两台主机。若是三台主机需要互联，则一台主机需要接两条网线，四台主机互联则每台主机需要接三条网线。</p>
+<p>在互联需求大的情况下，主机之间可以通过接入同一台交换机（网关）来达到互联的需求。</p>
+<p>此时主机A通过交换机传输数据包到主机B，则需要用到IP地址。</p>
+<p>主机A在传输数据包的时候，在数据包上附带目标主机B的IP地址，假设A主机的IP地址：192.168.0.1，B主机的IP地址192.168.0.2。A主机在发送数据包到交换机的时候，交换机根据目标IP进行转发，以此达到数据传输的效果。</p>
+<p>这种借由一个交换机组成的网络称之为局域网。而局域网与局域网之间也需要通信，则每个局域网的网关又将接入一个共同的交换机，以此来达到局域网之间通信的效果。</p>
+<p>当多个局域网连接起来的时候，我们称之为广域网。广域网是数量庞大的局域网的连接体。</p>
+<h2 id="ip地址的作用与划分">IP地址的作用与划分</h2>
+<p>IP地址分为公有与私有地址，也称保留地址。共有地址用于广域网的构建，私有地址用于局域网的构建。</p>
+<p>一个局域网内的私有IP地址不能重复，但不同的局域网内的IP地址有可能重复。</p>
+<p>举个例子，以省，市，区来说，省就是级别最高的那台交换机，省下面一级的就是市交换机，市交换机下面连接着许多个区，这些区级就相当于一个个主机。</p>
+<p>这些市级交换机的名字就是公有IP，而这些区的名字就是私有IP。</p>
+<p>换句话说，拿在任何一个地方用都可以直接访问的叫公有IP，也叫公网，而公网底下组成的局域网的IP则称之为私有IP。</p>
+<p>IP本身是由4*8位的二进制数构成的一个数字，为了方便记忆，IP通常采用点分十进制的方式展现给人。</p>
+<p>IP地址主要分为五大类</p>
 <ul>
-<li>靶机回复RST（Reset复位）包，代表靶机当前端口是关闭的。</li>
-<li>靶机回复SYN/ACK包，目标主机接受后发送RST包表示建立连接。</li>
+<li>A类 大型网络使用</li>
+<li>B类 中型网络使用</li>
+<li>C类 小型网络使用</li>
+<li>D类 广播地址</li>
+<li>E类 保留地址（私有地址）</li>
 </ul>
-</li>
-<li>
-<p>TCP Connect 全连接扫描</p>
-<p>主机向靶机某端口发送SYN包，靶机会有以下两种回复</p>
+<p>每台主机还有自己的子网掩码，一般为255.X.X.X的形式，在需要的情况下，X可以不为255。</p>
+<p>在局域网内，两个IP是否处于同一网段需要由IP本身跟主机的子网掩码共同确定。例如：</p>
 <ul>
-<li>靶机回复RST包，代表靶机当前端口是关闭的。</li>
-<li>靶机回复SYN/ACK包，主机在收到回复后，发送ACK包，随后紧接着发送RST包代表成功建立连接。</li>
+<li>主机A的IP为192.168.10.5，子网掩码为255.255.255.0</li>
+<li>主机B的IP为192.168.10.6，子网掩码为255.255.255.0</li>
+<li>主机C的IP为192.168.10.7，子网掩码为255.255.0.0</li>
 </ul>
-</li>
-<li>
-<p>TCP ACK确认扫描</p>
-<p>主机向靶机发送SYN包，靶机会有以下两种回复</p>
-<ul>
-<li>靶机回复RST包，表示端口未被防火墙过滤。</li>
-<li>靶机不回复，表示端口被防火墙过滤。</li>
-</ul>
-<p>注意这种扫描只能扫描出端口的过滤情况，无论靶机何种回复，都无法确认端口的开放情况。</p>
-</li>
-<li>
-<p>TCP 秘密扫描</p>
-<p>主机向靶机目标端口发送TCP FIN，Xmas tree（flag中的FIN URG PUSH被置为1），NULL（flags全为0）包三种之一。 靶机会有以下两种状态</p>
-<ul>
-<li>不回复，表示靶机目标端口开放或被过滤。</li>
-<li>靶机回复RST包，表示靶机目标端口关闭。</li>
-</ul>
-</li>
-<li>
-<p>UDP 扫描
-主机向靶机目标端口发送UDP包，靶机会有以下两种状态</p>
-<ul>
-<li>靶机不回复，表示目标端口被过滤或开启。</li>
-<li>靶机回复ICMP:portunreachable表示目标端口关闭。</li>
-</ul>
-</li>
-</ol>
-<p>常见的网络端口扫描防御大多数为开启防火墙，关闭ICMP应答与关闭不必要的端口。对于必须开放的端口可以进行端口伪装，也就是把默认的端口号更改来进行防御。</p>
-<hr>
-<p>使用nmap工具可以对网段内的ip进行端口扫描，nmap的具体使用方式可以查看下方链接
-<a href="https://blog.csdn.net/Javachichi/article/details/133133262">Nmap使用教程图文教程（超详细）-CSDN博客</a>
-若是使用虚拟机进行环境模拟，需设置虚拟机网络连接模式为桥接模式。
-桥接模式下的虚拟机在网络上相当于是一台独立的主机，可以访问网段内的其他ip地址。
-nat模式下的虚拟机相当于主机的一台子设备，只能访问主机本身。</p>
+<p>则A与B处于同一网段（192.168.10.X），A与C处于不同网段（192.168.10.X和192.168.X.X）</p>
+<p>此外，IP地址还有一个概念叫地址块（CIDR）。它的表现为：IP地址/X，例如10.0.0.0/8</p>
+<p>10.0.0.0/8表示10.0.0.0 - 10.255.255.255 整个网段的IP地址，CIDR的X具体计算方法涉及到IP地址的二进制表示，感兴趣的读者可以自行查阅。</p>
+<p>互联网的数据传输光靠IP还不够。交换机内部还存储有路由表，每台主机的内部还有独一无二的MAC地址，这些都是组成互联的重要因素。</p>
 </article>
               </div>
             </div>
